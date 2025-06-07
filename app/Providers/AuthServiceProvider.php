@@ -4,7 +4,9 @@ namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use App\Models\Game;
+use App\Models\Post;
 use App\Policies\GamePolicy;
+use App\Policies\PostPolicy;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -15,6 +17,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         Game::class => GamePolicy::class,
+        Post::class => PostPolicy::class,
     ];
 
     /**
@@ -24,6 +27,6 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        // Outras Gates, se precisar
+        // Outras Gates, se necessário
     }
 }

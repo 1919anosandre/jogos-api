@@ -22,10 +22,10 @@ class GameRequest extends FormRequest
     public function rules(): array
     {
         return [
-              'title' => 'required|string|max:255',
+          'title' => 'required|string|max:255',
         'description' => 'nullable|string',
         'genre_id' => 'required|exists:genres,id',
-        'platforms' => 'array',
+        'platforms' => 'sometimes|array',
         'platforms.*' => 'exists:platforms,id'
         ];
     }

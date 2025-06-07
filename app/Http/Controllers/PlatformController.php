@@ -41,4 +41,10 @@ class PlatformController extends Controller
         $platforms = Platform::all();
         return view('platforms.index', compact('platforms'));
     }
+
+    public function edit(Platform $platform)
+{
+    return view('platforms.edit', compact('platform'));
+}
+
 }
